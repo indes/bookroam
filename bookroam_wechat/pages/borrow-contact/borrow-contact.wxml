@@ -1,0 +1,17 @@
+<!--pages/forum-add/forum-add.wxml-->
+<view class="main-container">
+    <form bindsubmit="formSubmit">
+        <view class="title-msg">联系方式</view>
+
+        <input type="text" id="title" placeholder="请输入你的联系方式" name="title"/>
+
+        <view class="content-msg">借书理由</view>
+
+        <textarea id="content" placeholder="请你输入借书理由" name="content"/>
+
+        <view class="button">
+            <!-- <button id="cancelBtn" bindtap="cancelBtn">取消发布</button> -->
+            <button id="sendBtn" formType="submit">提交</button>
+        </view>
+    </form>
+</view>

@@ -1,0 +1,49 @@
+<!--pages/user/user.wxml-->
+<view class="main-container">
+
+    <!--用户信息-->
+    <view class="user-container">
+        <view class="logo">
+            <image src="{{userInfo.avatarUrl}}"></image>
+        </view>
+        <view class="username">{{username}}</view>
+        <!--<view id="borrowNumber" wx:if="{{credit >= 90}}">
+          <view id="point1"></view>
+          <view id="point1"></view>
+          <view id="point1"></view>
+          <view id="point1"></view>
+          <view id="point1"></view>
+        </view>
+        <view id="borrowNumber" wx:if="{{credit < 90}}">
+          <view id="point1"></view>
+          <view id="point1"></view>
+        </view>-->
+        
+    </view>
+
+    <!--设置选项-->
+    <view class="set-container">
+        <view class="set-card" bindtap="userHistoryBtn">
+            <image src="/images/setting/history.png" />
+            <view class="name">借阅历史</view>
+            <view class="arrow">></view>
+        </view>
+        <view class="set-card" bindtap="userShareBookBtn">
+            <image src="/images/setting/history.png" />
+            <view class="name">共享图书</view>
+            <view class="arrow">></view>
+        </view>
+        <view class="set-card" bindtap="userForumBtn">
+            <image src="/images/setting/forum.png" />
+            <view class="name">我的书评</view>
+            <view class="arrow">></view>
+        </view>
+        <view class="set-card" bindtap="userCommentBtn">
+            <image src="/images/setting/comment.png" />
+            <view class="name">我的评论</view>
+            <view class="arrow">></view>
+        </view>
+    
+    </view>
+
+</view>

@@ -1,0 +1,62 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/main/main",
+    "pages/scan-index/scan-index",
+    "pages/scan-login/scan-login",
+    "pages/scan-main/scan-main",
+    "pages/scan-admin/scan-admin",
+    "pages/book-return/book-return",
+    "pages/book-grade/book-grade",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/books/books",
+    "pages/books-search/books-search",
+    "pages/forum/forum",
+    "pages/user/user",
+    "pages/book-detail/book-detail",
+    "pages/books-list/books-list",
+    "pages/forum-content/forum-content",
+    "pages/forum-add/forum-add",
+    "pages/user-history/user-history",
+    "pages/user-forum/user-forum",
+    "pages/user-comment/user-comment",
+    "pages/user-setting/user-setting",
+    "pages/user-borrow/user-borrow",
+    "pages/user-share-book/user-share-book",
+    "pages/book-borrow/book-borrow",
+    "pages/user-info/user-info",
+    "pages/borrow-contact/borrow-contact"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#FFA700",
+    "navigationBarTitleText": "图书漫游",
+    "navigationBarTextStyle":"write"
+  },
+  "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/books/books",
+                "text": "借书",
+                "iconPath": "images/tabBar/books_0.png",
+                "selectedIconPath": "images/tabBar/books_1.png"
+            },
+            {
+                "pagePath": "pages/forum/forum",
+                "text": "动态",
+                "iconPath": "images/tabBar/forum_0.png",
+                "selectedIconPath": "images/tabBar/forum_1.png"
+            },
+            {
+                "pagePath": "pages/user/user",
+                "text": "用户",
+                "iconPath": "images/tabBar/user_0.png",
+                "selectedIconPath": "images/tabBar/user_1.png"
+            }
+        ],
+        "borderStyle": "white",
+        "selectedColor": "#4db6ac",
+        "color": "#999"
+    }
+}

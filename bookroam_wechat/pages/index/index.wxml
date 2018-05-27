@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container" >
+  <view class="logo">
+    <image class="logo-icon" src="/images/index/index-logo.png" background-size="cover"></image>
+    <text class="logo-title">读书交友</text>
+  </view>
+  <view class="button">
+    <!-- <view class="loginBtn" bindtap="loginBtnOnClick">进入</view> -->
+    <button id="saveBtn" open-type="getUserInfo" bindgetuserinfo="loginBtnOnClick">进入</button>
+    
+    
+    <!-- <view class="registerBtn" bindtap="registerBtnOnClick">注册</view> -->
+  </view>
+  <!-- <view class="codeBtn" bindtap="scanEnterBtn">扫码端</view> -->
+</view>

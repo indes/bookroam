@@ -1,0 +1,33 @@
+<!--pages/user-setting/user-setting.wxml-->
+<view class="main-container">
+    <form bindsubmit="formSubmit">
+        <view class="bookShare">
+            <text>标题</text>
+            <input type="text" name="bookTitle" />
+        </view>
+        <view class="bookShare">
+            <text>图书编号</text>
+            <input type="text" name="bookId" />
+        </view>
+        <view class="bookShare">
+            <text>作者</text>
+            <input type="text" name="bookAuthor" />
+        </view>
+
+        <view class="bookShare">
+            <text>出版社</text>
+            <input type="text" name="bookPress" />
+        </view>
+        
+        <view class="bookShare">
+            <text>描述</text>
+            <input type="text"/>
+        </view>
+        <view class="button">
+            <button id="cancelBtn" bindtap="cancelBtn">取消</button>
+            <button id="saveBtn" formType="submit">保存</button>
+        </view>
+         <button id="saveBtn" formType="submit">上传照片</button>
+     
+    </form>
+</view>

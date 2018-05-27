@@ -1,0 +1,117 @@
+<!--pages/user-history/user-history.wxml-->
+<view class="main-container">
+    <view class="user-container">
+        <view class="logo">
+            <image src="{{userInfo.user_avatarUrl}}"></image>
+        </view>
+        <view class="username">{{userInfo.user_username}}</view>
+        <!-- <view class="desc">当前信用分数: {{userInfo.credit}}分</view> -->
+        <!--<view id="borrowNumber" wx:if="{{credit >= 90}}">
+                  <view id="point1"></view>
+                  <view id="point1"></view>
+                  <view id="point1"></view>
+                  <view id="point1"></view>
+                  <view id="point1"></view>
+                </view>
+                <view id="borrowNumber" wx:if="{{credit < 90}}">
+                  <view id="point1"></view>
+                  <view id="point1"></view>
+                </view>-->
+      <button type="default" size="mini"  plain="true"
+         bindtap="clickFollow" > {{isFollow}} </button>
+    </view>
+    
+    <view class="card" catchtap="showForumContentBtn" wx:for="{{forumAndComments}}" 
+    wx:for-item="forumAndComment" id="{{forumAndComment.forum.forumId}}">
+        <view class="content-row">
+            {{forumAndComment.forum.forumContent}}
+        </view>
+        <view class="book-row" bindtap="showBookDetailBtn" id="{{forumAndComment.forum.book.bookId}}">
+            <image src="http:{{forumAndComment.forum.book.bookImageBig}}"></image>
+            <view class="left">
+                <text class="title">{{forumAndComment.forum.book.bookName}}</text>
+                <text class="author">作者: {{forumAndComment.forum.book.bookAuthor}}</text>
+                <text class="press">出版社: {{forumAndComment.forum.book.bookPress}}</text>
+            </view>
+        </view>
+        <view class="comment-row">{{forumAndComment.forum.forumTime}}, {{forumAndComment.commentNumber}}评论</view>
+    </view>
+
+    <view wx:if="{{forumAndComments == 0}}" style="color:#666; font-size:32rpx; text-align:center; margin-top:100px;">暂无书评</view>
+    
+    <view class="card-b" wx:for="{{history}}" wx:for-item="h" style="margin-bottom: 10px;">
+            <view style="margin-top:10px;"></view>
+            <view>借阅图书：《{{h.book.bookName}}》</view>
+            <view>借阅时间：{{h.borrowStartTime}} | 还书时间：{{h.borrowEndTime}}</view>
+            <view class="grade">借阅评分：
+                    <view wx:if="{{h.borrowGrade == 1}}">
+                        <image src="/images/main/star_1.png"/>
+                        <image src="/images/main/star_0.png"/>
+                        <image src="/images/main/star_0.png"/>
+                        <image src="/images/main/star_0.png"/>
+                        <image src="/images/main/star_0.png"/>
+                    </view>
+                    <view wx:if="{{h.borrowGrade == 2}}">
+                        <image src="/images/main/star_1.png"/>
+                        <image src="/images/main/star_1.png"/>
+                        <image src="/images/main/star_0.png"/>
+                        <image src="/images/main/star_0.png"/>
+                        <image src="/images/main/star_0.png"/>
+                    </view>
+                    <view wx:if="{{h.borrowGrade == 3}}">
+                        <image src="/images/main/star_1.png"/>
+                        <image src="/images/main/star_1.png"/>
+                        <image src="/images/main/star_1.png"/>
+                        <image src="/images/main/star_0.png"/>
+                        <image src="/images/main/star_0.png"/>
+                    </view>
+                    <view wx:if="{{h.borrowGrade == 4}}">
+                        <image src="/images/main/star_1.png"/>
+                        <image src="/images/main/star_1.png"/>
+                        <image src="/images/main/star_1.png"/>
+                        <image src="/images/main/star_1.png"/>
+                        <image src="/images/main/star_0.png"/>
+                    </view>
+                    <view wx:if="{{h.borrowGrade == 5}}">
+                        <image src="/images/main/star_1.png"/>
+                        <image src="/images/main/star_1.png"/>
+                        <image src="/images/main/star_1.png"/>
+                        <image src="/images/main/star_1.png"/>
+                        <image src="/images/main/star_1.png"/>
+                    </view>
+            </view>
+        </view>
+    
+            <view wx:if="{{history == 0}}" style="color:#666; font-size:32rpx; text-align:center; margin-top:100px;">暂无借阅历史</view>
+
+
+    <!-- 
+
+
+    <view class="card" wx:for="{{history}}" wx:for-item="h" style="margin-bottom: 10px;">
+        <view style="margin-top:10px;"></view>
+        <view>借阅图书：《{{h.book.bookName}}》</view>
+        <view>借阅时间：{{h.borrowStartTime}} | 还书时间：{{h.borrowEndTime}}</view>
+    </view>
+    <view wx:if="{{history == 0}}" style="color:#666; font-size:32rpx; text-align:center; margin-top:100px;">暂无借阅历史</view>
+    
+    <view class="card" catchtap="showForumContentBtn" wx:for="{{forumAndComments}}" wx:for-item="forumAndComment" id="{{forumAndComment.forum.forumId}}">
+        <view class="title-row">{{forumAndComment.forum.forumTitle}}</view>
+        <view class="delete" catchtap="deleteBtn" id="{{forumAndComment.forum.forumId}}">删除</view>
+        <view class="content-row">
+            {{forumAndComment.forum.forumContent}}
+        </view>
+        <view class="book-row" bindtap="showBookDetailBtn" id="{{forumAndComment.forum.book.bookId}}">
+            <image src="http:{{forumAndComment.forum.book.bookImageBig}}"></image>
+            <view class="left">
+                <text class="title">{{forumAndComment.forum.book.bookName}}</text>
+                <text class="author">作者: {{forumAndComment.forum.book.bookAuthor}}</text>
+                <text class="press">出版社: {{forumAndComment.forum.book.bookPress}}</text>
+            </view>
+        </view>
+        <view class="comment-row">{{forumAndComment.forum.forumTime}}, {{forumAndComment.commentNumber}}评论</view>
+    </view>
+
+    <view wx:if="{{forumAndComments == 0}}" style="color:#666; font-size:32rpx; text-align:center; margin-top:100px;">暂无发帖</view> -->
+
+</view>

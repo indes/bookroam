@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - book_mate@localhost" uuid="69c71e5f-aa33-4219-a23f-7ee643eeaaa2">
+    <database-info product="MySQL" version="5.7.20-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.44 ( Revision: b3cda4f864902ffdde495b9df93937c3e20009be )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.2">
+      <schema id="1" name="book_mate"/>
+      <table id="2" parent="1" name="admin"/>
+      <table id="3" parent="1" name="admin_message"/>
+      <table id="4" parent="1" name="book"/>
+      <table id="5" parent="1" name="book_classify_two"/>
+      <table id="6" parent="1" name="book_recommend_result"/>
+      <table id="7" parent="1" name="borrow"/>
+      <table id="8" parent="1" name="borrow_record"/>
+      <table id="9" parent="1" name="browse_record"/>
+      <table id="10" parent="1" name="forum"/>
+      <table id="11" parent="1" name="forum_comment"/>
+      <table id="12" parent="1" name="user"/>
+      <table id="13" parent="1" name="user_recommend_result"/>
+      <table id="14" parent="1" name="user_book"/>
+      <table id="15" parent="1" name="user_comment"/>
+      <column id="16" parent="2" name="admin_id">
+        <comment>管理员id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="17" parent="2" name="admin_username">
+        <comment>管理员名</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)</data-type>
+      </column>
+      <column id="18" parent="2" name="admin_password">
+        <comment>管理员密码</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="19" parent="2" name="admin_work">
+        <comment>管理员职能</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="20" parent="2" name="admin_email">
+        <comment>管理员邮箱</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="21" parent="2" name="admin_create_time">
+        <comment>创建时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <index id="22" parent="2" name="admin_username">
+        <columns>admin_username</columns>
+        <unique>1</unique>
+      </index>
+      <key id="23" parent="2" name="admin_username">
+        <columns>admin_username</columns>
+        <underlying-index>admin_username</underlying-index>
+      </key>
+      <key id="24" parent="2" name="PRIMARY">
+        <columns>admin_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="25" parent="3" name="admin_message_id">
+        <comment>管理员通知id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="26" parent="3" name="admin_message_title">
+        <comment>管理员通知标题</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(500)</data-type>
+      </column>
+      <column id="27" parent="3" name="admin_message_content">
+        <comment>管理员通知内容</comment>
+        <mandatory>1</mandatory>
+        <data-type>text</data-type>
+      </column>
+      <column id="28" parent="3" name="admin_message_time">
+        <comment>发布时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="29" parent="3" name="admin_id">
+        <comment>管理员id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="30" parent="3" name="PRIMARY">
+        <columns>admin_message_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="31" parent="4" name="book_id">
+        <mandatory>1</mandatory>
+        <data-type>int(100)</data-type>
+      </column>
+      <column id="32" parent="4" name="book_number">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="33" parent="4" name="book_name">
+        <comment>书籍名称</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="34" parent="4" name="book_author">
+        <comment>书籍作者</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="35" parent="4" name="book_press">
+        <comment>书籍出版社</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="36" parent="4" name="book_image_big">
+        <data-type>varbinary(500)</data-type>
+      </column>
+      <column id="37" parent="4" name="book_image_small">
+        <comment>书籍封皮缩略图</comment>
+        <data-type>varchar(500)</data-type>
+      </column>
+      <column id="38" parent="4" name="book_classify_one">
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="39" parent="4" name="book_classify_two">
+        <comment>书籍二级分类</comment>
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="40" parent="4" name="book_desc">
+        <comment>书籍简介</comment>
+        <data-type>text</data-type>
+      </column>
+      <column id="41" parent="4" name="book_address">
+        <comment>书籍所在地址</comment>
+        <data-type>varchar(300)</data-type>
+      </column>
+      <column id="42" parent="4" name="book_grade">
+        <comment>书籍评分</comment>
+        <data-type>double</data-type>
+      </column>
+      <column id="43" parent="4" name="book_sum">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="44" parent="4" name="book_residue">
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="45" parent="4" name="PRIMARY">
+        <columns>book_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="46" parent="5" name="book_classify_two_id">
+        <comment>图书二级分类id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="47" parent="5" name="book_classify_two_name">
+        <comment>图书二级分类名</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(500)</data-type>
+      </column>
+      <key id="48" parent="5" name="PRIMARY">
+        <columns>book_classify_two_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="49" parent="6" name="book_recommend_result_id">
+        <comment>图书推荐结果id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="50" parent="6" name="book_recommend_result_book">
+        <comment>推荐目标图书id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="51" parent="6" name="book_recommend_result_r1">
+        <comment>图书推荐结果1</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="52" parent="6" name="book_recommend_result_r2">
+        <comment>图书推荐结果2</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="53" parent="6" name="book_recommend_result_r3">
+        <comment>图书推荐结果3</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="54" parent="6" name="book_recommend_result_r4">
+        <comment>图书推荐结果4</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="55" parent="6" name="book_recommend_result_r5">
+        <comment>图书推荐结果5</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="56" parent="6" name="book_recommend_result_r6">
+        <comment>图书推荐结果6</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="57" parent="6" name="book_recommend_result_r7">
+        <comment>图书推荐结果7</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="58" parent="6" name="book_recommend_result_r8">
+        <comment>图书推荐结果8</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="59" parent="6" name="PRIMARY">
+        <columns>book_recommend_result_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="60" parent="7" name="borrow_id">
+        <comment>借阅id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="61" parent="7" name="borrow_book_id">
+        <comment>借阅图书id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="62" parent="7" name="borrow_user_id">
+        <comment>借阅用户id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="63" parent="7" name="borrow_start_time">
+        <comment>借书时间</comment>
+        <data-type>date</data-type>
+      </column>
+      <column id="64" parent="7" name="borrow_end_time">
+        <comment>还书时间</comment>
+        <data-type>date</data-type>
+      </column>
+      <column id="65" parent="7" name="borrow_status">
+        <comment>借阅状态</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="66" parent="7" name="borrow_grade">
+        <comment>借阅评分</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="67" parent="7" name="PRIMARY">
+        <columns>borrow_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="68" parent="8" name="borrow_record_id">
+        <comment>借阅记录id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="69" parent="8" name="borrow_record_user_id">
+        <comment>借阅记录用户id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="70" parent="8" name="borrow_record_classify_id">
+        <comment>借阅记录类别id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="71" parent="8" name="borrow_record_number">
+        <comment>借阅记录数量</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="72" parent="8" name="PRIMARY">
+        <columns>borrow_record_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="73" parent="9" name="browse_record_id">
+        <comment>浏览记录id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="74" parent="9" name="browse_record_user_id">
+        <comment>浏览记录用户id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="75" parent="9" name="browse_record_classify_id">
+        <comment>浏览记录类别id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="76" parent="9" name="browse_record_number">
+        <comment>浏览记录类别数量</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="77" parent="9" name="PRIMARY">
+        <columns>browse_record_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="78" parent="10" name="forum_id">
+        <comment>论坛帖子id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="79" parent="10" name="forum_title">
+        <comment>论坛帖子标题</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(300)</data-type>
+      </column>
+      <column id="80" parent="10" name="forum_content">
+        <comment>论坛帖子内容</comment>
+        <mandatory>1</mandatory>
+        <data-type>text</data-type>
+      </column>
+      <column id="81" parent="10" name="forum_time">
+        <comment>论坛帖子发表时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="82" parent="10" name="forum_user_id">
+        <comment>论坛帖子发布用户id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="83" parent="10" name="forum_book_id">
+        <comment>论坛帖子对应书籍id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="84" parent="10" name="good_num">
+        <data-type>int(10)</data-type>
+      </column>
+      <key id="85" parent="10" name="PRIMARY">
+        <columns>forum_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="86" parent="11" name="forum_comment_id">
+        <comment>帖子回复id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="87" parent="11" name="forum_comment_content">
+        <comment>帖子回复内容</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(500)</data-type>
+      </column>
+      <column id="88" parent="11" name="forum_comment_time">
+        <comment>帖子回复时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="89" parent="11" name="forum_comment_user_id">
+        <comment>帖子回复用户id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="90" parent="11" name="forum_comment_forum_id">
+        <comment>评论对应的帖子id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="91" parent="11" name="PRIMARY">
+        <columns>forum_comment_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="92" parent="12" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(50)</data-type>
+      </column>
+      <column id="93" parent="12" name="user_username">
+        <comment>用户名</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="94" parent="12" name="user_avatarUrl">
+        <data-type>text</data-type>
+      </column>
+      <column id="95" parent="12" name="user_password">
+        <comment>用户密码</comment>
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="96" parent="12" name="user_credit">
+        <comment>用户信用值</comment>
+        <data-type>int(4)</data-type>
+        <default-expression>&apos;80&apos;</default-expression>
+      </column>
+      <column id="97" parent="12" name="user_create_time">
+        <comment>创建时间</comment>
+        <data-type>date</data-type>
+      </column>
+      <column id="98" parent="12" name="user_message_status">
+        <comment>消息推送开关</comment>
+        <data-type>int(4)</data-type>
+        <default-expression>&apos;1&apos;</default-expression>
+      </column>
+      <column id="99" parent="12" name="user_new_status">
+        <comment>新书推荐开关</comment>
+        <data-type>int(4)</data-type>
+        <default-expression>&apos;1&apos;</default-expression>
+      </column>
+      <column id="100" parent="12" name="user_forum_status">
+        <comment>书友推荐开关</comment>
+        <data-type>int(4)</data-type>
+        <default-expression>&apos;1&apos;</default-expression>
+      </column>
+      <column id="101" parent="12" name="user_recommend_status">
+        <comment>个人推荐数量</comment>
+        <data-type>int(4)</data-type>
+        <default-expression>&apos;60&apos;</default-expression>
+      </column>
+      <column id="102" parent="12" name="user_header">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <index id="103" parent="12" name="user_username">
+        <columns>user_username</columns>
+        <unique>1</unique>
+      </index>
+      <key id="104" parent="12" name="PRIMARY">
+        <columns>user_id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="105" parent="12" name="user_username">
+        <columns>user_username</columns>
+        <underlying-index>user_username</underlying-index>
+      </key>
+      <column id="106" parent="13" name="user_recommend_result_id">
+        <comment>用户推荐结果id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="107" parent="13" name="user_recommend_result_user">
+        <comment>推荐的用户id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="108" parent="13" name="user_recommend_result_r1">
+        <comment>用户推荐结果1</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="109" parent="13" name="user_recommend_result_r2">
+        <comment>用户推荐结果2</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="110" parent="13" name="user_recommend_result_r3">
+        <comment>用户推荐结果3</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="111" parent="13" name="user_recommend_result_r4">
+        <comment>用户推荐结果4</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="112" parent="13" name="user_recommend_result_r5">
+        <comment>用户推荐结果5</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="113" parent="13" name="user_recommend_result_r6">
+        <comment>用户推荐结果6</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="114" parent="13" name="user_recommend_result_r7">
+        <comment>用户推荐结果7</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="115" parent="13" name="user_recommend_result_r8">
+        <comment>用户推荐结果8</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="116" parent="13" name="PRIMARY">
+        <columns>user_recommend_result_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="117" parent="14" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="118" parent="14" name="book_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="119" parent="14" name="status">
+        <mandatory>1</mandatory>
+        <data-type>int(1)</data-type>
+      </column>
+      <column id="120" parent="14" name="good_num">
+        <data-type>int(10)</data-type>
+      </column>
+      <column id="121" parent="14" name="publish_time">
+        <data-type>datetime</data-type>
+      </column>
+      <key id="122" parent="14" name="PRIMARY">
+        <columns>user_id
+book_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="123" parent="15" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="124" parent="15" name="forum_comment_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="125" parent="15" name="GOOD_MUN">
+        <data-type>int(10)</data-type>
+      </column>
+      <key id="126" parent="15" name="PRIMARY">
+        <columns>user_id
+forum_comment_id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>
